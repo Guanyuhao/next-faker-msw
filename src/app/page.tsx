@@ -1,4 +1,5 @@
 import Posts from "@/components/Posts";
+import "@arco-design/web-react/dist/css/arco.css";
 
 export default function Home() {
   return (
