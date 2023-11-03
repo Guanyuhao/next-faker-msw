@@ -2,23 +2,15 @@
 import { useCallback, type FC, useState, useEffect } from 'react';
 import { Button, Space } from '@arco-design/web-react';
 import axios from "axios"
+import useMsw from "@/mocks/userMusHook"
 
 interface PostsProps {}
 
 const Posts: FC<PostsProps> = () => {
     const [data1, setData1 ] = useState<any>();
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            console.log("process.env.NEXT_PUBLIC_API_MOCKING:", process.env.NEXT_PUBLIC_API_MOCKING)
-            // if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
-                import("@/mocks/browser").then(res => {
-                    res?.worker.start()
-                })  
-            // }
-        }
-      }, []);
-
+    useMsw();
+    
     const createdFetch = useCallback(() => {
         axios.get("/api/posts").then(({data}) => {
             setData1(data);
