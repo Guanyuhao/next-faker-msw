@@ -1,16 +1,17 @@
 "use client"
-import { useCallback, type FC, useState, useEffect } from 'react';
+import { useCallback, type FC, useState, useContext, useEffect } from 'react';
 import { Button, Space } from '@arco-design/web-react';
 import axios from "axios"
-import useMsw from "@/mocks/userMusHook"
+import { MswContext } from "@/mocks/useMsw";
+import posts from "@/mocks/posts";
 
 interface PostsProps {}
 
 const Posts: FC<PostsProps> = () => {
     const [data1, setData1 ] = useState<any>();
 
-    useMsw();
-    
+    const worker = useContext(MswContext);
+
     const createdFetch = useCallback(() => {
         axios.get("/api/posts").then(({data}) => {
             setData1(data);
@@ -28,6 +29,10 @@ const Posts: FC<PostsProps> = () => {
             setData1(data);
         })
     }, [])
+
+    useEffect(() => {
+        worker?.use(...posts)
+    }, [worker])
 
     return <Space size='large'>
     <Button type='primary' onClick={createdFetch}>查看一下</Button>

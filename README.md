@@ -42,3 +42,18 @@ msw解决了模拟接口请求, faker制造假数据
 
 1. [faker](https://fakerjs.dev/api/finance.html)
 2. [msw](https://mswjs.io/docs/api/setup-worker/)
+
+## browser
+```js
+useEffect(() => {
+    if (typeof window !== 'undefined' && process.env.NODE_ENV === "development") {
+      import("@/mocks/browser").then(res => {
+          res?.worker.start()
+          setWorker(res?.worker)
+        })
+    }
+  }, []);
+```
+
+## mws node 支持 next.js App
+https://github.com/mswjs/msw/issues/1644
