@@ -10,8 +10,6 @@ interface PostsProps {}
 const Posts: FC<PostsProps> = () => {
     const [data1, setData1 ] = useState<any>();
 
-    const worker = useContext(MswContext);
-
     const createdFetch = useCallback(() => {
         axios.get("/api/posts").then(({data}) => {
             setData1(data);
@@ -29,6 +27,8 @@ const Posts: FC<PostsProps> = () => {
             setData1(data);
         })
     }, [])
+
+    const worker = useContext(MswContext);
 
     useEffect(() => {
         worker?.use(...posts)

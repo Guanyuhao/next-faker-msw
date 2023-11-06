@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 使用nextJs架构 搞多页面应用架构，搞SEO，可扩展成BFF层
 
 ## Getting Started
 
@@ -43,7 +43,7 @@ msw解决了模拟接口请求, faker制造假数据
 1. [faker](https://fakerjs.dev/api/finance.html)
 2. [msw](https://mswjs.io/docs/api/setup-worker/)
 
-## browser
+### browser
 ```js
 useEffect(() => {
     if (typeof window !== 'undefined' && process.env.NODE_ENV === "development") {
@@ -55,5 +55,9 @@ useEffect(() => {
   }, []);
 ```
 
-## mws node 支持 next.js App
+### mws node 支持 next.js App
 https://github.com/mswjs/msw/issues/1644
+
+## TODO：搞单测 
+
+> 建议： 1. 负责逻辑 2. 公用工具 3.不方便调试逻辑
