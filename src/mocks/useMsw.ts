@@ -11,7 +11,7 @@ export const useMswInterceptionRequest = () => {
     if (
       typeof window !== "undefined" &&
       process.env.NODE_ENV === "development" &&
-      !worker
+      process.env.NEXT_PUBLIC_MOCK_API === "enabled"
     ) {
       import("@/mocks/browser").then((res) => {
         res?.worker.start();
