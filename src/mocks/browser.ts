@@ -1,2 +1,4 @@
 import { setupWorker  } from 'msw/browser'
-export const worker = setupWorker();
+import users from "./user"
+
+export const worker = setupWorker(...users);
