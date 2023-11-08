@@ -1,7 +1,7 @@
 "use client"
 import Posts from "@/components/Posts";
 import Login from "@/components/Login";
-import { MswContext, useMswInterceptionRequest } from "@/mocks/useMsw"
+import { MswContext, useMswInterceptionRequest } from "@/mws/useMsw"
 
 import "@arco-design/web-react/dist/css/arco.css";
 

@@ -55,6 +55,12 @@ useEffect(() => {
   }, []);
 ```
 
+### 利用webpack 在客户端动态导入mocks
+```
+gco webpack-mocks
+```
+
+
 ### mws node 支持 next.js App
 https://github.com/mswjs/msw/issues/1644
 

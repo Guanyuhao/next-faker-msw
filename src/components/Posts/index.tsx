@@ -2,8 +2,6 @@
 import { useCallback, type FC, useState, useContext, useEffect } from 'react';
 import { Button, Space } from '@arco-design/web-react';
 import axios from "axios"
-import { MswContext } from "@/mocks/useMsw";
-import posts from "@/mocks/posts";
 
 interface PostsProps {}
 
@@ -27,12 +25,6 @@ const Posts: FC<PostsProps> = () => {
             setData1(data);
         })
     }, [])
-
-    const worker = useContext(MswContext);
-
-    useEffect(() => {
-        worker?.use(...posts)
-    }, [worker])
 
     return <Space size='large'>
     <Button type='primary' onClick={createdFetch}>查看一下</Button>
