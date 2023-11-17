@@ -1,0 +1,1 @@
+export * as PrimeMock from "./useMsw"
