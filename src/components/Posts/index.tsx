@@ -42,7 +42,7 @@ const Posts: FC<PostsProps> = () => {
           return res.body;
         }
       })
-      .then((rb: Response) => {
+      .then((rb: any) => {
         const reader = rb?.getReader();
         let buffer = "";
 
@@ -53,7 +53,7 @@ const Posts: FC<PostsProps> = () => {
           ): Promise<void> {
             if (result.done) {
               console.log("status done");
-              return;
+              return (async () => {})();
             }
 
             const message = new TextDecoder("utf-8").decode(result.value);

@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb)) no-repeat;
 }
+html {
+  font-family: var(--dinpro), var(--noto-sans-hk) , var(--roboto), "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", Helvetica, Arial, monospace,serif;
+}
+
+html body {
+  font-family: var(--dinpro), var(--noto-sans-hk) , var(--roboto), "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", Helvetica, Arial, monospace,serif;
+}
